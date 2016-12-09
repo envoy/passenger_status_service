@@ -16,7 +16,6 @@
 !/log/.keep
 /tmp
 
-/config/*.yml
 .DS_Store
 /*.pid
 /*.lock
