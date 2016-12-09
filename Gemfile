@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'puma', '3.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
@@ -32,18 +32,9 @@ gem 'pg', require: nil
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development do
-  gem 'capistrano-rails', require: nil
-  gem 'capistrano-rvm', require: nil
-  gem 'capistrano-passenger', require: nil
-  gem 'capistrano-maintenance', require: nil
-  gem 'quiet_assets'
-  gem 'annotate', '~> 2.6.6'
 end
 
 group :development, :test do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
