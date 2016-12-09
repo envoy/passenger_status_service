@@ -17,41 +17,41 @@ ActiveRecord::Schema.define(version: 20150814151125) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  null: false
-    t.string   "encrypted_password",     null: false
+    t.string   "email",                  :null=>false
+    t.string   "encrypted_password",     :null=>false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean  "admin",                  default: false, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.boolean  "admin",                  :default=>false, :null=>false
+    t.datetime "created_at",             :null=>false
+    t.datetime "updated_at",             :null=>false
   end
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], :name=>"index_users_on_email", :unique=>true, :using=>:btree
+  add_index "users", ["reset_password_token"], :name=>"index_users_on_reset_password_token", :unique=>true, :using=>:btree
 
   create_table "apps", force: :cascade do |t|
-    t.integer  "user_id",    null: false, foreign_key: {references: "users", name: "fk_apps_user_id", on_update: :cascade, on_delete: :cascade}
-    t.string   "name",       null: false
-    t.string   "api_token",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",    :null=>false, :foreign_key=>{:references=>"users", :name=>"fk_apps_user_id", :on_update=>:cascade, :on_delete=>:cascade}
+    t.string   "name",       :null=>false
+    t.string   "api_token",  :null=>false
+    t.datetime "created_at", :null=>false
+    t.datetime "updated_at", :null=>false
   end
-  add_index "apps", ["api_token"], name: "index_apps_on_api_token", unique: true, using: :btree
+  add_index "apps", ["api_token"], :name=>"index_apps_on_api_token", :unique=>true, :using=>:btree
 
   create_table "hosts", force: :cascade do |t|
-    t.integer  "app_id",     null: false, foreign_key: {references: "apps", name: "fk_hosts_app_id", on_update: :cascade, on_delete: :cascade}
-    t.string   "hostname",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "app_id",     :null=>false, :foreign_key=>{:references=>"apps", :name=>"fk_hosts_app_id", :on_update=>:cascade, :on_delete=>:cascade}
+    t.string   "hostname",   :null=>false
+    t.datetime "created_at", :null=>false
+    t.datetime "updated_at", :null=>false
   end
-  add_index "hosts", ["app_id", "hostname"], name: "index_hosts_on_app_id_and_hostname", unique: true, using: :btree
+  add_index "hosts", ["app_id", "hostname"], :name=>"index_hosts_on_app_id_and_hostname", :unique=>true, :using=>:btree
 
   create_table "statuses", force: :cascade do |t|
-    t.text     "content",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "host_id",    null: false, foreign_key: {references: "hosts", name: "fk_statuses_host_id", on_update: :cascade, on_delete: :cascade}
+    t.text     "content",    :null=>false
+    t.datetime "created_at", :null=>false
+    t.datetime "updated_at", :null=>false
+    t.integer  "host_id",    :null=>false, :foreign_key=>{:references=>"hosts", :name=>"fk_statuses_host_id", :on_update=>:cascade, :on_delete=>:cascade}
   end
-  add_index "statuses", ["host_id", "updated_at"], name: "index_statuses_on_host_id_and_updated_at", using: :btree
+  add_index "statuses", ["host_id", "updated_at"], :name=>"index_statuses_on_host_id_and_updated_at", :using=>:btree
 
 end
