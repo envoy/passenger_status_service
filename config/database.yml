@@ -1,0 +1,6 @@
+production:
+  adapter: postgresql
+  url:
+  pool: 5
+  timeout: 5000
+  url: <%= ENV['DATABASE_URL'] %>
