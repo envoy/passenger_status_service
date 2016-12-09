@@ -1,6 +1,17 @@
-production:
+default: &default
   adapter: postgresql
-  url:
+  encoding: unicode
   pool: 5
   timeout: 5000
+
+development: &development
+  <<: *default
+  database: passenger-status-development
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  username: <%= ENV['DATABASE_USERNAME'] || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
+
+production:
+  <<: *default
   url: <%= ENV['DATABASE_URL'] %>
