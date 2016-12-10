@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   put 'statuses/:namespace/:hostname.json' => 'statuses#create', format: 'json'
   get 'statuses/:namespace/:hostname(.:format)' => 'statuses#show'
+  get 'tos' => 'welcome#tos'
+  get 'faq' => 'welcome#faq'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
