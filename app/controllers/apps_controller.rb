@@ -1,5 +1,6 @@
 class AppsController < ApplicationController
   before_action :authenticate_user!
+  http_basic_authenticate_with name: ENV["ADMIN"], password: ENV["ADMIN_PASSWORD"], except: :index
   before_filter :find_app, only: [:edit, :show, :setup, :wait, :update, :destroy]
 
   def index
