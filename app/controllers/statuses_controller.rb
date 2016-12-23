@@ -42,7 +42,7 @@ class StatusesController < ApplicationController
         status = host.new_status_report_from_api_params(params)
         process_info = status.process_info
         process_info.each do |process|
-          source = "#{@app.name}.#{host.hostname}"
+          source = "#{@app.name}.#{host.hostname}.#{process[:pid]}"
           namespace = "passengerstatus.metrics"
           memory    = process[:memory].sub("M", "").to_i
           cpu       = process[:cpu].to_i
