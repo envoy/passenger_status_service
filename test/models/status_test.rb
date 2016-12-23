@@ -1,22 +1,14 @@
-# == Schema Information
-#
-# Table name: statuses
-#
-#  id         :integer          not null, primary key
-#  content    :text             not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  host_id    :integer          not null
-#
-# Indexes
-#
-#  index_statuses_on_host_id_and_updated_at  (host_id,updated_at)
-#
+require "minitest/autorun"
 
-require 'test_helper'
+class StatusTest < Minitest::Test
+  def setup
+    @status = Status.new
+    @status.content = File.read(File.new("#{Rails.root}/test/fixtures/status_value.txt"))
+  end
 
-class StatusTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def test_process_info
+    process_info = @status.process_info
+    assert_equal(30, process_info.length)
+    assert_equal(["3108", "1875", "0", "451M"], process_info.first.values)
+  end
 end

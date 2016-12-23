@@ -1,0 +1,74 @@
+Version : 5.1.0
+Date    : 2016-12-23 20:50:38 +0000
+Instance: YAYOiGxI (nginx/1.10.2 Phusion_Passenger/5.1.0)
+
+----------- General information -----------
+Max pool size : 30
+App groups    : 1
+Processes     : 30
+Requests in top-level queue : 0
+
+----------- Application groups -----------
+/app/public (production):
+  App root: /app
+  Requests in queue: 0
+  * PID: 3108    Sessions: 0       Processed: 1875    Uptime: 4h 36m 38s
+    CPU: 0%      Memory  : 451M    Last used: 0s ago
+  * PID: 5805    Sessions: 0       Processed: 646     Uptime: 4h 27m 49s
+    CPU: 0%      Memory  : 428M    Last used: 1s ago
+  * PID: 8523    Sessions: 0       Processed: 252     Uptime: 4h 18m 50s
+    CPU: 0%      Memory  : 404M    Last used: 4s ago
+  * PID: 11381   Sessions: 0       Processed: 141     Uptime: 4h 9m 21s
+    CPU: 0%      Memory  : 393M    Last used: 5s ago
+  * PID: 18263   Sessions: 0       Processed: 108     Uptime: 3h 46m 0s
+    CPU: 0%      Memory  : 341M    Last used: 5s ago
+  * PID: 19267   Sessions: 0       Processed: 87      Uptime: 3h 42m 47s
+    CPU: 0%      Memory  : 364M    Last used: 4m 30s a
+  * PID: 20359   Sessions: 0       Processed: 75      Uptime: 3h 39m 8s
+    CPU: 0%      Memory  : 354M    Last used: 4m 30s ag
+  * PID: 21875   Sessions: 0       Processed: 81      Uptime: 3h 34m 10s
+    CPU: 0%      Memory  : 332M    Last used: 4m 29s a
+  * PID: 25003   Sessions: 0       Processed: 55      Uptime: 3h 23m 52s
+    CPU: 0%      Memory  : 392M    Last used: 4m 30s a
+  * PID: 27708   Sessions: 0       Processed: 57      Uptime: 3h 15m 9s
+    CPU: 0%      Memory  : 393M    Last used: 4m 29s ag
+  * PID: 30340   Sessions: 0       Processed: 51      Uptime: 3h 6m 23s
+    CPU: 0%      Memory  : 364M    Last used: 4m 29s ag
+  * PID: 708     Sessions: 0       Processed: 32      Uptime: 2h 56m 51s
+    CPU: 0%      Memory  : 353M    Last used: 4m 30s a
+  * PID: 3540    Sessions: 0       Processed: 19      Uptime: 2h 47m 30s
+    CPU: 0%      Memory  : 354M    Last used: 4m 30s a
+  * PID: 6398    Sessions: 0       Processed: 15      Uptime: 2h 37m 52s
+    CPU: 0%      Memory  : 331M    Last used: 4m 30s a
+  * PID: 9327    Sessions: 0       Processed: 9       Uptime: 2h 27m 59s
+    CPU: 0%      Memory  : 337M    Last used: 4m 30s a
+  * PID: 12172   Sessions: 0       Processed: 4       Uptime: 2h 18m 30s
+    CPU: 0%      Memory  : 325M    Last used: 4m 30s a
+  * PID: 15204   Sessions: 0       Processed: 4       Uptime: 2h 8m 48s
+    CPU: 0%      Memory  : 342M    Last used: 4m 30s ag
+  * PID: 18319   Sessions: 0       Processed: 1       Uptime: 1h 58m 41s
+    CPU: 0%      Memory  : 316M    Last used: 1h 7m 53
+  * PID: 21201   Sessions: 0       Processed: 1       Uptime: 1h 49m 27s
+    CPU: 0%      Memory  : 302M    Last used: 1h 7m 53
+  * PID: 24013   Sessions: 0       Processed: 1       Uptime: 1h 40m 18s
+    CPU: 0%      Memory  : 303M    Last used: 1h 7m 53
+  * PID: 26821   Sessions: 0       Processed: 1       Uptime: 1h 31m 15s
+    CPU: 0%      Memory  : 295M    Last used: 1h 7m 53
+  * PID: 29793   Sessions: 0       Processed: 1       Uptime: 1h 21m 31s
+    CPU: 0%      Memory  : 302M    Last used: 1h 7m 53
+  * PID: 32682   Sessions: 0       Processed: 0       Uptime: 1h 11m 59s
+    CPU: 0%      Memory  : 268M    Last used: 1h 11m 5
+  * PID: 3394    Sessions: 0       Processed: 0       Uptime: 1h 2m 9s
+    CPU: 0%      Memory  : 237M    Last used: 1h 2m 9s a
+  * PID: 6419    Sessions: 0       Processed: 0       Uptime: 52m 44s
+    CPU: 0%      Memory  : 253M    Last used: 52m 44s ago
+  * PID: 9678    Sessions: 0       Processed: 0       Uptime: 42m 35s
+    CPU: 0%      Memory  : 244M    Last used: 42m 35s ago
+  * PID: 12719   Sessions: 0       Processed: 0       Uptime: 33m 0s
+    CPU: 0%      Memory  : 217M    Last used: 33m 0s ago
+  * PID: 15840   Sessions: 0       Processed: 0       Uptime: 23m 0s
+    CPU: 0%      Memory  : 229M    Last used: 23m 0s ago
+  * PID: 18634   Sessions: 0       Processed: 0       Uptime: 14m 9s
+    CPU: 0%      Memory  : 222M    Last used: 14m 9s ago
+  * PID: 21695   Sessions: 0       Processed: 0       Uptime: 4m 26s
+    CPU: 0%      Memory  : 106M    Last used: 4m 26s ago

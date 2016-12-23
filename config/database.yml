@@ -12,6 +12,10 @@ development: &development
   username: <%= ENV['DATABASE_USERNAME'] || 'postgres' %>
   password: <%= ENV['DATABASE_PASSWORD'] || '' %>
 
+test: &test
+  <<: *default
+  database: passenger-status-test
+
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>

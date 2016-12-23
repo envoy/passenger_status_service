@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: statuses
@@ -28,5 +29,16 @@ class Status < ActiveRecord::Base
 
   def hostname
     host.try(:hostname)
+  end
+
+  def process_info
+    content.scan(/PID:\W+(\d+).+Processed:\W+(\d+).+\n\W+CPU\W+(\d)\W+Memory.+:\W+(\d+M)/).map! do |pid, processed, cpu, memory|
+      {
+        pid: pid,
+        processed: processed,
+        cpu: cpu,
+        memory: memory
+      }
+    end
   end
 end
