@@ -11,7 +11,7 @@ Requests in top-level queue : 0
 ----------- Application groups -----------
 /app/public (production):
   App root: /app
-  Requests in queue: 0
+  Requests in queue: 12
   * PID: 3108    Sessions: 0       Processed: 1875    Uptime: 4h 36m 38s
     CPU: 0%      Memory  : 451M    Last used: 0s ago
   * PID: 5805    Sessions: 0       Processed: 646     Uptime: 4h 27m 49s

@@ -11,4 +11,8 @@ class StatusTest < Minitest::Test
     assert_equal(30, process_info.length)
     assert_equal(["3108", "1875", "0", "451M"], process_info.first.values)
   end
+
+  def test_queue_size
+    assert_equal(12, @status.queue_size)
+  end
 end

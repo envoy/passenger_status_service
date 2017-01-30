@@ -41,4 +41,10 @@ class Status < ActiveRecord::Base
       }
     end
   end
+
+  def queue_size
+    content.scan(/Requests in queue: (\d+)/).map! do |size_string|
+      size_string.first.to_i
+    end.first
+  end
 end

@@ -40,10 +40,12 @@ class StatusesController < ApplicationController
         end
 
         status = host.new_status_report_from_api_params(params)
+        namespace = "passengerstatus.metrics"
+        host_source = "#{@app.name}.#{host.hostname}"
+        Librato.measure("#{namespace}.queue", status.queue_size, source: host_source)
         process_info = status.process_info
         process_info.each do |process|
-          source = "#{@app.name}.#{host.hostname}.#{process[:pid]}"
-          namespace = "passengerstatus.metrics"
+          source = "#{host_source}.#{process[:pid]}"
           memory    = process[:memory].sub("M", "").to_i
           cpu       = process[:cpu].to_i
           processed = process[:processed].to_i
