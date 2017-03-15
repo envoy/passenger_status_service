@@ -41,17 +41,21 @@ class StatusesController < ApplicationController
 
         status = host.new_status_report_from_api_params(params)
         namespace = "passengerstatus.metrics"
-        host_source = "#{@app.name}.#{host.hostname}"
-        Librato.measure("#{namespace}.queue", status.queue_size, source: host_source)
+
+        options = { tags: { app: @app.name, host: host.hostname } }
+        Librato.measure("#{namespace}.queue", status.queue_size, options)
         process_info = status.process_info
         process_info.each do |process|
-          source = "#{host_source}.#{process[:pid]}"
-          memory    = process[:memory].sub("M", "").to_i
-          cpu       = process[:cpu].to_i
+          options[:pid] = process[:pid]
+
+          memory = process[:memory].sub("M", "").to_i
+          Librato.measure("#{namespace}.memory", memory, options)
+
+          cpu = process[:cpu].to_i
+          Librato.measure("#{namespace}.cpu", cpu, options)
+
           processed = process[:processed].to_i
-          Librato.measure("#{namespace}.memory", memory, source: source)
-          Librato.measure("#{namespace}.cpu", cpu, source: source)
-          Librato.measure("#{namespace}.processed", processed, source: source)
+          Librato.measure("#{namespace}.processed", processed, options)
         end
         authorize! :create, status
         if status.valid?
